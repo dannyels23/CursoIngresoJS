@@ -10,5 +10,74 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+ 	let precio = 35;
+    let cantidad;
+    let Marca;
+    let descuento;
+    let IIBB;
+
+
+    cantidad = parseInt (document.getElementById ("txtIdCantidad").value);
+    Marca = document.getElementById("Marca").value;
+
+    switch (cantidad){
+        case 3:
+            if (Marca == "ArgentinaLuz"){
+                descuento = cantidad * precio * 15 / 100;
+                document.getElementById("txtIdprecioDescuento").value = descuento;
+            } else if (Marca == "FelipeLamparas"){
+                descuento = cantidad * precio * 10 / 100;
+                document.getElementById("txtIdprecioDescuento").value = descuento;
+            } else {
+                descuento = cantidad * precio * 5 / 100;
+                document.getElementById("txtIdprecioDescuento").value = descuento;
+            }
+            break;
+        case 4:
+            if (Marca == "ArgentinaLuz" || Marca == "FelipaLamparas"){
+                descuento = cantidad * precio * 25 / 100;
+                document.getElementById("txtIdprecioDescuento").value = descuento;
+            } else 
+                descuento = cantidad * precio * 20 / 100;
+                document.getElementById("txtIdprecioDescuento").value = descuento;
+            break;
+        case 5:
+            if (Marca == "ArgentinaLuz"){
+                descuento = cantidad * precio * 40 / 100;
+                document.getElementById("txtIdprecioDescuento").value = descuento;
+            } else 
+                descuento = cantidad * precio * 30 / 100;
+                document.getElementById("txtIdprecioDescuento").value = descuento;
+            break;
+        case 6:
+            descuento = cantidad * precio / 2;
+            document.getElementById("txtIdprecioDescuento").value = descuento;
+            break;
+        default:
+            descuento = cantidad * precio / 2;
+            document.getElementById("txtIdprecioDescuento").value = descuento;
+            IIBB = cantidad * precio * 10 / 100;
+            alert ("IIBB Usted pago " +IIBB );
+            break;
+    }
+        
+   
+   
+            
+ 
+ 
+              
+    
+                    
+            
+                   
+            
+        
+        
+        
+    
+
 }
+
+
+
