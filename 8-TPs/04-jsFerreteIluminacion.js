@@ -11,6 +11,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 function CalcularPrecio () 
 {
  	let precio = 35;
+    let calculoprecio;
     let cantidad;
     let Marca;
     let descuento;
@@ -21,33 +22,47 @@ function CalcularPrecio ()
     Marca = document.getElementById("Marca").value;
 
     switch (cantidad){
+        case 1:
+            document.getElementById("txtIdprecioDescuento").value = precio;
+            break;
+        case 2:
+            precio = precio * 2;
+            document.getElementById("txtIdprecioDescuento").value = precio;
+            break;
         case 3:
             if (Marca == "ArgentinaLuz"){
                 descuento = cantidad * precio * 15 / 100;
-                document.getElementById("txtIdprecioDescuento").value = descuento;
+                calculoprecio = (cantidad * precio) - descuento;
+                document.getElementById("txtIdprecioDescuento").value = calculoprecio;
             } else if (Marca == "FelipeLamparas"){
                 descuento = cantidad * precio * 10 / 100;
-                document.getElementById("txtIdprecioDescuento").value = descuento;
+                calculoprecio = (cantidad * precio) - descuento;
+                document.getElementById("txtIdprecioDescuento").value = calculoprecio;
             } else {
                 descuento = cantidad * precio * 5 / 100;
-                document.getElementById("txtIdprecioDescuento").value = descuento;
+                calculoprecio = (cantidad * precio) - descuento;
+                document.getElementById("txtIdprecioDescuento").value = calculoprecio;
             }
             break;
         case 4:
-            if (Marca == "ArgentinaLuz" || Marca == "FelipaLamparas"){
+            if (Marca == "ArgentinaLuz" || Marca == "FelipeLamparas"){
                 descuento = cantidad * precio * 25 / 100;
-                document.getElementById("txtIdprecioDescuento").value = descuento;
+                calculoprecio = (cantidad * precio) - descuento;
+                document.getElementById("txtIdprecioDescuento").value = calculoprecio;
             } else 
                 descuento = cantidad * precio * 20 / 100;
-                document.getElementById("txtIdprecioDescuento").value = descuento;
+                calculoprecio = (cantidad * precio) - descuento;
+                document.getElementById("txtIdprecioDescuento").value = calculoprecio;
             break;
         case 5:
             if (Marca == "ArgentinaLuz"){
                 descuento = cantidad * precio * 40 / 100;
-                document.getElementById("txtIdprecioDescuento").value = descuento;
+                calculoprecio = (cantidad * precio) - descuento;
+                document.getElementById("txtIdprecioDescuento").value = calculoprecio;
             } else 
                 descuento = cantidad * precio * 30 / 100;
-                document.getElementById("txtIdprecioDescuento").value = descuento;
+                calculoprecio = (cantidad * precio) - descuento;
+                document.getElementById("txtIdprecioDescuento").value = calculoprecio;
             break;
         case 6:
             descuento = cantidad * precio / 2;
@@ -55,9 +70,10 @@ function CalcularPrecio ()
             break;
         default:
             descuento = cantidad * precio / 2;
-            document.getElementById("txtIdprecioDescuento").value = descuento;
             IIBB = cantidad * precio * 10 / 100;
-            alert ("IIBB Usted pago " +IIBB );
+            calculoprecio = (cantidad * precio) - descuento + IIBB;
+            document.getElementById("txtIdprecioDescuento").value = calculoprecio;
+            alert ("Usted pago de IIBB" +IIBB );
             break;
     }
         
